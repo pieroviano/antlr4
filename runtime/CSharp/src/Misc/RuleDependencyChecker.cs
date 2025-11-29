@@ -59,7 +59,7 @@ namespace Antlr4.Runtime.Misc
 
         private static IEnumerable<TypeInfo> GetTypesToCheck(Assembly assembly)
         {
-            return assembly.DefinedTypes;
+            return assembly.GetDefinedTypes();
         }
 
         private static bool IsChecked(Assembly assembly)

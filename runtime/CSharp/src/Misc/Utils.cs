@@ -4,6 +4,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Antlr4.Runtime.Misc
@@ -20,7 +21,7 @@ namespace Antlr4.Runtime.Misc
     {
         public static string Join<T>(string separator, IEnumerable<T> items)
         {
-            return string.Join(separator, items);
+            return string.Join(separator, items.Select(i => i?.ToString()).ToArray());
         }
 
         public static int NumNonnull(object[] data)
