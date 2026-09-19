@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="$(NuGetPackageRoot)net4x.nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props" Condition="Exists('$(NuGetPackageRoot)net4x.nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.props')" />
     <PropertyGroup>
         <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
         <NoWarn>CS3001;CS3002;CS3003</NoWarn>
-        <NuGetUtilityVersion Condition="'$(NuGetUtilityVersion)' == ''">1.0.3</NuGetUtilityVersion>
+        <NuGetUtilityVersion Condition="'$(NuGetUtilityVersion)' == ''">1.0.16</NuGetUtilityVersion>
         <Company>The ANTLR Organization</Company>
         <Version>$(VersionPrefix).$(VersionSuffix)</Version>
         <NeutralLanguage>en-US</NeutralLanguage>
@@ -51,7 +50,7 @@
     <ItemGroup>
         <PackageReference Include="Net4x.BaseTypes" Version="$(Net4xBaseTypesVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
-        <PackageReference Include="Net4x.ValueTuple" Version="1.4.0" Condition="'$(TargetFramework)'!='netstandard2.0'" />
+        <PackageReference Include="Net4x.ValueTuple" Version="1.4.0.*" Condition="'$(TargetFramework)'!='netstandard2.0'" />
     </ItemGroup>
     <PropertyGroup>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -59,5 +58,4 @@
     <ItemGroup>
         <None Include="README.md" Link="README.md" Pack="true" PackagePath="\README.md" />
     </ItemGroup>
-    <Import Project="$(NuGetPackageRoot)net4x.nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets" Condition="Exists('$(NuGetPackageRoot)net4x.nugetutility/$(NuGetUtilityVersion)/build/NuGet.Utility.targets')" />
 </Project>
